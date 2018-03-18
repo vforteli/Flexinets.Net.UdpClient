@@ -9,6 +9,7 @@ namespace Flexinets.Net
     {
         private TaskCompletionSource<UdpReceiveResult> _taskCompletionSource;
 
+
         public Socket Client => throw new NotImplementedException();
 
         public void Close()
