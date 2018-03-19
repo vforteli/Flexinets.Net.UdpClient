@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
-    <Version>1.0.7</Version>
+    <Version>1.0.12</Version>
     <PackageProjectUrl>https://github.com/vforteli/Flexinets.Net.UdpClient</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/vforteli/Flexinets.Net.UdpClient/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright 2018 Verner Fortelius</Copyright>
@@ -10,23 +10,10 @@
     <Description>
       Wrapper for .Net UdpClient. Can be used for mocking the async send and receive functions during testing.
     </Description>
-    <Authors>Verner Fortelius</Authors>
+    <Authors>Verner Fortelius</Authors> 
     <PackageTags>Udp UdpClient Mock Test</PackageTags>
-    <AssemblyVersion>1.0.7.0</AssemblyVersion>
-    <FileVersion>1.0.7.0</FileVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.Increment.None</AssemblyVersionSettings>
-    <UpdatePackageVersion>True</UpdatePackageVersion>
-    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
-    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-    <AssemblyFileVersionSettings>None.None.Increment.None</AssemblyFileVersionSettings>
+    <AssemblyVersion>1.0.12.0</AssemblyVersion>
+    <FileVersion>1.0.12.0</FileVersion>
   </PropertyGroup>
 
 </Project>

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace Flexinets.Net
 {
+    /// <summary>
+    /// Wrapper for System.Net.UdpClient
+    /// Only a subset of the methods are currently supported
+    /// </summary>
     public class UdpClientWrapper : IUdpClient
     {
         private UdpClient _client;
