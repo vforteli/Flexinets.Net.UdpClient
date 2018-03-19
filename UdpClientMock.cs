@@ -7,7 +7,8 @@ namespace Flexinets.Net
 {
     public class UdpClientMock : IUdpClient
     {
-        private TaskCompletionSource<UdpReceiveResult> _taskCompletionSource;
+        private TaskCompletionSource<UdpReceiveResult> _receiveTaskCompletionSource;
+        private TaskCompletionSource<UdpReceiveResult> _sendTaskCompletionSource;
 
 
         public Socket Client => null;
@@ -24,19 +25,21 @@ namespace Flexinets.Net
 
         public async Task<UdpReceiveResult> ReceiveAsync()
         {
-            _taskCompletionSource = new TaskCompletionSource<UdpReceiveResult>();
-            return await _taskCompletionSource.Task;
+            _receiveTaskCompletionSource = new TaskCompletionSource<UdpReceiveResult>();
+            return await _receiveTaskCompletionSource.Task;
         }
 
         public void Send(Byte[] content, Int32 length, IPEndPoint recipient)
         {
-            throw new NotImplementedException();
+            _sendTaskCompletionSource.SetResult(new UdpReceiveResult(content, recipient));
         }
 
 
-        public void SendMock(UdpReceiveResult mockResult)
+        public Task<UdpReceiveResult> SendMock(UdpReceiveResult mockResult)
         {
-            _taskCompletionSource.SetResult(mockResult);
+            _sendTaskCompletionSource = new TaskCompletionSource<UdpReceiveResult>();
+            _receiveTaskCompletionSource.SetResult(mockResult);
+            return _sendTaskCompletionSource.Task;
         }
     }
 }
