@@ -26,9 +26,15 @@ namespace Flexinets.Net
         }
 
 
-        public void Send(Byte[] content, Int32 length, IPEndPoint recipient)
+        public void Send(Byte[] content, Int32 length, IPEndPoint remoteEndpoint)
         {
-            _client.Send(content, length, recipient);
+            _client.Send(content, length, remoteEndpoint);
+        }
+
+
+        public Task<Int32> SendAsync(Byte[] content, Int32 length, IPEndPoint remoteEndpoint)
+        {
+            return _client.SendAsync(content, length, remoteEndpoint);
         }
 
 

@@ -34,6 +34,11 @@ namespace Flexinets.Net
             _sendTaskCompletionSource.SetResult(new UdpReceiveResult(content, recipient));
         }
 
+        public Task<Int32> SendAsync(Byte[] content, Int32 length, IPEndPoint remoteEndpoint)
+        {
+            Send(content, length, remoteEndpoint);
+            return Task.FromResult(0);
+        }
 
         public Task<UdpReceiveResult> SendMock(UdpReceiveResult mockResult)
         {
